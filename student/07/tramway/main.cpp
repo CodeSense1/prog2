@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 /*
  * Author: Joonas Kakkuri
@@ -35,6 +36,13 @@
 
 
 using TramlineMap = std::map<std::string, std::vector<std::string>>;
+=======
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <map>
+>>>>>>> b4d204d3428ab79820ad1e98ee2e56164c60c381
 
 // The most magnificent function in this whole program.
 // Prints a RASSE
@@ -52,6 +60,7 @@ void print_rasse()
                  "-------------------------------" << std::endl;
 }
 
+<<<<<<< HEAD
 /////////////////////////////////////////////////////////////////////////////////
 ///////////////////////// GENERAL HELP FUNCTION /////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
@@ -652,4 +661,16 @@ int main()
 
     }
 
+=======
+
+void readFile( std::string filename, std::map<std::string, std::vector<std::string>> data ) {
+
+}
+
+// Short and sweet main.
+int main()
+{
+    print_rasse();
+    return EXIT_SUCCESS;
+>>>>>>> b4d204d3428ab79820ad1e98ee2e56164c60c381
 }
