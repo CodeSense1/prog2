@@ -1,0 +1,29 @@
+S Hugo Laura
+S Hugo Jasper
+S Laura Helena
+S Jasper Maria
+S Laura Elias
+S Helena Sofia
+
+
+S A B
+S B C
+S C D
+S A E
+S B F
+S C G
+S D H
+S B I
+S C J
+S F K
+S J L
+S I M
+S C N
+S E O
+S G P
+S H Q
+S J R
+S A S
+S G T
+S D U
+S U V
