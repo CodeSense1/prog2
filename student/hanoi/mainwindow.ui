@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>774</width>
-    <height>553</height>
+    <width>1252</width>
+    <height>730</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>20</x>
       <y>90</y>
-      <width>511</width>
-      <height>301</height>
+      <width>901</width>
+      <height>401</height>
      </rect>
     </property>
    </widget>
@@ -40,8 +40,8 @@
    <widget class="QPushButton" name="quitBtn">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>450</y>
+      <x>1050</x>
+      <y>610</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -67,7 +67,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>20</y>
+      <y>0</y>
       <width>191</width>
       <height>61</height>
      </rect>
@@ -88,19 +88,29 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>400</y>
-      <width>491</width>
-      <height>99</height>
+      <x>170</x>
+      <y>500</y>
+      <width>621</width>
+      <height>151</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="logical_controls">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetFixedSize</enum>
+     </property>
      <property name="leftMargin">
       <number>0</number>
      </property>
      <property name="horizontalSpacing">
       <number>60</number>
      </property>
+     <item row="1" column="1">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Move top piece to:</string>
+       </property>
+      </widget>
+     </item>
      <item row="2" column="1">
       <widget class="QPushButton" name="ba">
        <property name="text">
@@ -108,10 +118,25 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
-      <widget class="QPushButton" name="bc">
+     <item row="2" column="2">
+      <widget class="QPushButton" name="ca">
        <property name="text">
-        <string>TOWER 3</string>
+        <string>TOWER 1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_9">
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Tower 3</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -131,34 +156,6 @@
      </item>
      <item row="2" column="0">
       <widget class="QPushButton" name="ab">
-       <property name="text">
-        <string>TOWER 2</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QPushButton" name="ac">
-       <property name="text">
-        <string>TOWER 3</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="2">
-      <widget class="QPushButton" name="ca">
-       <property name="text">
-        <string>TOWER 1</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string>Move top piece to:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="2">
-      <widget class="QPushButton" name="cb">
        <property name="text">
         <string>TOWER 2</string>
        </property>
@@ -194,77 +191,118 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="2">
-      <widget class="QLabel" name="label_9">
-       <property name="font">
-        <font>
-         <pointsize>15</pointsize>
-        </font>
-       </property>
+     <item row="3" column="0">
+      <widget class="QPushButton" name="ac">
        <property name="text">
-        <string>Tower 3</string>
+        <string>TOWER 3</string>
        </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QPushButton" name="bc">
+       <property name="text">
+        <string>TOWER 3</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QPushButton" name="cb">
+       <property name="text">
+        <string>TOWER 2</string>
        </property>
       </widget>
      </item>
     </layout>
    </widget>
-   <widget class="QTextBrowser" name="moveBoard">
+   <widget class="QLabel" name="errorLabel">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>160</y>
-      <width>181</width>
-      <height>241</height>
+      <x>20</x>
+      <y>70</y>
+      <width>281</width>
+      <height>16</height>
      </rect>
     </property>
-    <property name="html">
-     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2';&quot;&gt;1: 1 -&amp;gt; 2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <property name="text">
+     <string>Kiekkojen  määrän täytyy olla positiivinen kokonaisluku</string>
     </property>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>100</y>
-      <width>161</width>
-      <height>41</height>
+      <x>970</x>
+      <y>60</y>
+      <width>258</width>
+      <height>511</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_2">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>TIME:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="currentTime">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>00:00</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_8">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>BEST TIME:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="bestTime">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>timelabel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_10">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>TIME:</string>
+        <string>Move history</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QLabel" name="currentTime">
-       <property name="text">
-        <string>timelabel</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_8">
-       <property name="text">
-        <string>BEST TIME:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLabel" name="bestTime">
-       <property name="text">
-        <string>timelabel</string>
-       </property>
-      </widget>
+     <item>
+      <widget class="QListWidget" name="moveBoard"/>
      </item>
     </layout>
    </widget>
@@ -274,7 +312,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>774</width>
+     <width>1252</width>
      <height>20</height>
     </rect>
    </property>

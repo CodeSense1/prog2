@@ -1,7 +1,12 @@
+
+#include <QStyleOptionGraphicsItem>
+
 #include "piece.hh"
 #include "colormanager.hh"
 
-Piece::Piece(int size, int x, int y, int width, int height, QWidget *parent)
+#include <iostream>
+
+Piece::Piece(int size, qreal x, qreal y, qreal width, qreal height, QWidget *parent)
   : size_(size), x_(x), y_(y), width_(width), height_(height), parent_(parent)
 
 {
@@ -11,7 +16,7 @@ Piece::Piece(int size, int x, int y, int width, int height, QWidget *parent)
 }
 
 // Optional constructor
-Piece::Piece(int size, QPointF location, QSize pieceSize, QWidget *parent)
+Piece::Piece(int size, QPointF location, QSizeF pieceSize, QWidget *parent)
     : size_(size),
       x_(static_cast<int>(location.rx())),
       y_(static_cast<int>(location.ry())),
@@ -23,7 +28,12 @@ Piece::Piece(int size, QPointF location, QSize pieceSize, QWidget *parent)
     setFlag(ItemIsMovable);
 }
 
-int Piece::getSize()
+Piece::~Piece()
+{
+    delete frame;
+}
+
+int Piece::getSize() const
 {
     return size_;
 }
@@ -33,6 +43,7 @@ void Piece::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 {
     QRectF rect = boundingRect();
     QBrush brush( colorManager::getRandomColor() );
+
 
     painter->fillRect(rect, brush);
     painter->drawRect(rect);

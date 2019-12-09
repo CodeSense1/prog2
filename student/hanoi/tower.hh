@@ -1,23 +1,29 @@
 #ifndef TOWER_HH
 #define TOWER_HH
 
+// QT-imports
 #include <QWidget>
 #include <QGraphicsRectItem>
 #include <QGraphicsScene>
 #include <QPen>
 #include <QBrush>
-#include <QPoint>
+#include <QPointF>
 
-#include <memory>
+// STL- imports
 #include <vector>
 
+
 #include "piece.hh"
+
+class GameMove;
 
 class Tower : public QGraphicsItem
 {
 public:
-    explicit Tower(int maxPieces, QPoint location, QWidget *parent = nullptr);
+    explicit Tower(int maxPieces, QPointF location, QWidget *parent = nullptr);
+    explicit Tower(int maxPieces, int towerId, QPointF location, QWidget *parent = nullptr);
 
+    ~Tower() override;
     bool addPiece(Piece* pieceToAdd);
     void drawPieces(QGraphicsScene* scene);
 
@@ -32,6 +38,10 @@ public:
     QRectF boundingRect() const override;
 
 
+
+
+    int getTowerId();
+
 signals:
 
 public slots:
@@ -39,12 +49,13 @@ public slots:
 private:
 
     const int TOWER_WIDTH = 5;
-    const int MAX_PIECE_COUNT = 25; // It's not practical to play with more than 25 pieces
+    const int MAX_PIECE_SIZE = INT_MAX;
     std::vector< Piece* > pieces;
 
     QRectF* stick;
     int maxPieces_;
-    QPoint location_;
+    int towerId_;
+    QPointF location_;
     QWidget* parent;
 
     int maxPieceWidth;

@@ -7,11 +7,17 @@
 #include <QKeyEvent>
 #include <QPushButton>
 #include <QAbstractButton>
+#include <QButtonGroup>
+#include <QTime>
 
 #include <memory>
+#include <map>
+#include <vector>
 
 #include "tower.hh"
 #include "gamemanager.hh"
+#include "gamemove.hh"
+#include "digitalclock.hh"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -25,17 +31,31 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void StartGame();
+    void Initialize();
+
+    void connectButtons();
+    void updateConnections();
+
+    void NewGame();
     void Restart();
+    void Update();
 
 protected:
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow *ui_;
     QGraphicsScene* scene_;
-    GameManager* manager;
+    GameManager* manager_;
+    QButtonGroup logicalButtons_;
 
-    const int DEFAULT_PIECE_COUNT = 3;
+    QGraphicsTextItem* gameWinText;
+    DigitalClock* dClock;
+    QTime* bestTime = nullptr;
+
+    std::map<QPushButton*, GameMove> buttonMoves_;
+    // std::vector<GameMove*> moveHistory;
+
+    const int DEFAULT_PIECE_COUNT = 4;
     const int DEFAULT_TOWER_COUNT = 3;
 
     const int tower1Id = 1;
@@ -43,6 +63,6 @@ private:
     const int tower3Id = 3;
 
 
-    int pieceCount = DEFAULT_PIECE_COUNT;
+    int pieceCount_ = DEFAULT_PIECE_COUNT;
 };
 #endif // MAINWINDOW_H

@@ -12,10 +12,12 @@
 class Piece : public QGraphicsRectItem
 {
 public:
-    explicit Piece(int size, int x, int y, int width, int height, QWidget *parent = nullptr);
-    explicit Piece(int size, QPointF location, QSize pieceSize, QWidget* parent = nullptr);
+    explicit Piece(int size, qreal x, qreal y, qreal width, qreal height, QWidget *parent = nullptr);
+    explicit Piece(int size, QPointF location, QSizeF pieceSize, QWidget* parent = nullptr);
 
-    int getSize();
+    ~Piece() override;
+
+    int getSize() const;
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
     QRectF boundingRect() const override;
@@ -30,10 +32,10 @@ public slots:
 private:
     QRectF* frame;
     int size_;
-    int x_;
-    int y_;
-    int width_;
-    int height_;
+    qreal x_;
+    qreal y_;
+    qreal width_;
+    qreal height_;
 
     QWidget* parent_;
 

@@ -17,7 +17,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     colormanager.cpp \
+    digitalclock.cpp \
     gamemanager.cpp \
+    gamemove.cpp \
     main.cpp \
     mainwindow.cpp \
     piece.cpp \
@@ -25,7 +27,9 @@ SOURCES += \
 
 HEADERS += \
     colormanager.hh \
+    digitalclock.hh \
     gamemanager.hh \
+    gamemove.hh \
     mainwindow.hh \
     piece.hh \
     tower.hh
